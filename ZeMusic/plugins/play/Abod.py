@@ -16,16 +16,23 @@ from random import  choice, randint
 
 
 lnk= "https://t.me/" +config.CHANNEL_LINK
-@app.on_message(command(["غنيلي","‹ غنيلي ›"]))
+Nb = BOT_NAME + " غنيلي"
+
+@app.on_message(filters.regex(r"^(غنيلي|‹ غنيلي ›|" + re.escape(Nb) + r")$"))
 async def ihd(client: Client, message: Message):
-    rl = random.randint(2,90)
+    rl = random.randint(2, 90)
     url = f"https://t.me/BE_19/{rl}"
-    await client.send_voice(message.chat.id,url,caption="↯ : تم اختيار اغنية لك 🤍",
-    reply_markup=InlineKeyboardMarkup(
+    await client.send_voice(
+        chat_id=message.chat.id,
+        voice=url,
+        caption="🤍",
+        reply_to_message_id=message.id,
+        reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text=config.CHANNEL_NAME, url=lnk)
+                        text=config.CHANNEL_NAME, url=lnk
+                    )
                 ],
             ]
         )
