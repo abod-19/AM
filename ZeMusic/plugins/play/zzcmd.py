@@ -13,7 +13,7 @@ lnk= "https://t.me/" +config.CHANNEL_LINK
 @app.on_callback_query(filters.regex("zzzback"))
 async def zzzback(_, query: CallbackQuery):
    await query.edit_message_text(
-       f"""<b>» منور يحبي باوامر الميوزك .</b>\n\n<b>» استخدم الازرار الي تحت .\n» عشان تشوف اوامر الميوزك يعيني .</b>""",
+       f"""<b>⟡ منور يحبي باوامر الميوزك .</b>\n\n<b>⟡ استخدم الازرار الي تحت .\n⟡ عشان تشوف اوامر الميوزك يعيني .</b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -40,7 +40,7 @@ async def zzzback(_, query: CallbackQuery):
 @app.on_callback_query(filters.regex("zzzdv") & SUDOERS)
 async def mpdtsf(_, query: CallbackQuery):
    await query.edit_message_text(
-       f"""<b>» مرحبـاً بك عـزيـزي المطـور </b>\n\n<b>» استخـدم الازرار بالاسفـل \n» لـ تصفـح اوامـر الميـوزك </b>""",
+       f"""<b>⟡ مرحبـاً بك عـزيـزي المطـور </b>\n\n<b>⟡ استخدم الازرار الي تحت .\n⟡ عشان تشوف اوامر الميوزك يعيني .</b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
