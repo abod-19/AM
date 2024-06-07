@@ -14,65 +14,31 @@ from pyrogram.types import (
 from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 
-REPLY_MESSAGE = "<b>- اهلا بك عزيزي اليك قائمه الاوامر</b>"
-
-
-
-
+REPLY_MESSAGE = "<b>⟡ اهلا بك عزيزي اليك قائمه الاوامر</b>"
 REPLY_MESSAGE_BUTTONS = [
-
           [
-
-             ("‹ غنيلي ›"),
-
-             ("‹ تلغراف ›")
-
+             ("‹ غنيلي ›")
           ],
-
           [
-
              ("‹ صور ›"),
-
              ("‹ انمي ›")
-
           ],
-
           [
-
              ("‹ متحركه ›"),
-
              ("‹ اقتباسات ›")
-
           ],
-
           [
-
              ("‹ افتارات شباب ›"),
-
              ("‹ افتار بنات ›")
-
           ],
-
           [
-
              ("‹ هيدرات ›"),
-
              ("‹ قران ›")
-
-          ],
-    
+          ],    
           [
-
              ("‹ اخفاء الكيبورد ›")
-
           ]
-
-]
-
-
-
-
-  
+]  
 
 @app.on_message(filters.regex("^/cmds$") & filters.private)
 async def cpanel(_, message: Message):             
