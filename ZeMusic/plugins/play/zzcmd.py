@@ -13,20 +13,20 @@ lnk= "https://t.me/" +config.CHANNEL_LINK
 @app.on_callback_query(filters.regex("zzzback"))
 async def zzzback(_, query: CallbackQuery):
    await query.edit_message_text(
-       f"""<b>» مرحبـاً بك عـزيـزي </b> .\n\n<b>» استخـدم الازرار بالاسفـل 𝄞\n» لـ تصفـح اوامـر الميـوزك 🥁</b>""",
+       f"""<b>» منور يحبي باوامر الميوزك .</b>\n\n<b>» استخدم الازرار الي تحت .\n» عشان تشوف اوامر الميوزك يعيني .</b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "• اوامــر التشغيــل •", callback_data="zzzll"),
+                        "اوامــر التشغيــل", callback_data="zzzll"),
                 ],[
                     InlineKeyboardButton(
-                        "• اوامـر القنـاة •", callback_data="zzzch"),
+                        "اوامـر القنـاة", callback_data="zzzch"),
                     InlineKeyboardButton(
-                        "• اوامـر الادمـن •", callback_data="zzzad"),
+                        "اوامـر الادمـن", callback_data="zzzad"),
                 ],[
                     InlineKeyboardButton(
-                        "• اوامــر المطــور •", callback_data="zzzdv"),
+                        "اوامــر المطــور", callback_data="zzzdv"),
                 ],[
                     InlineKeyboardButton(
                         text=config.CHANNEL_NAME, url=lnk),
@@ -40,20 +40,20 @@ async def zzzback(_, query: CallbackQuery):
 @app.on_callback_query(filters.regex("zzzdv") & SUDOERS)
 async def mpdtsf(_, query: CallbackQuery):
    await query.edit_message_text(
-       f"""<b>» مرحبـاً بك عـزيـزي المطـور </b>\n\n<b>» استخـدم الازرار بالاسفـل 𝄞\n» لـ تصفـح اوامـر الميـوزك 🥁</b>""",
+       f"""<b>» مرحبـاً بك عـزيـزي المطـور </b>\n\n<b>» استخـدم الازرار بالاسفـل \n» لـ تصفـح اوامـر الميـوزك </b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "• التحـديث •", callback_data="zzzup"),
+                        "التحـديث", callback_data="zzzup"),
                 ],[
                     InlineKeyboardButton(
-                        "• الـرفــع •", callback_data="zzzsu"),
+                        "الـرفــع", callback_data="zzzsu"),
                     InlineKeyboardButton(
-                        "• الـحظــر •", callback_data="zzzbn"),
+                        "الـحظــر", callback_data="zzzbn"),
                 ],[
                     InlineKeyboardButton(
-                        "• الاشعــارات & المسـاعــد •", callback_data="zzzas"),
+                        "الاشعــارات & المسـاعــد", callback_data="zzzas"),
                 ],[
                     InlineKeyboardButton(
                         "رجـوع", callback_data="zzzback"),
