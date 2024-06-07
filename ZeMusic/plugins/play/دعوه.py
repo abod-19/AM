@@ -1,4 +1,3 @@
-
 from config import OWNER_ID
 import asyncio
 from pyrogram import Client, filters
@@ -10,17 +9,17 @@ from ZeMusic.core.call import Mody
 
 @app.on_message(filters.video_chat_started)
 async def brah(_, msg):
-       await msg.reply("<b>• فتحوا المكالمه اللي وده يسمعنا صوته يصعد 🦦</b>")
+       await msg.reply("بديت المكالمه ادخلو نسمع اصواتكم ♡.")
 
 
 @app.on_message(filters.video_chat_ended)
 async def brah2(_, msg):
-       await msg.reply("<b>• قفلناء المكالمه اصواتكم تفتح النفس🦦</b>")
+       await msg.reply("طفت المكالمه نشوفكم على خير ♡.")
 
 
 @app.on_message(filters.video_chat_members_invited)
 async def brah3(app :app, message:Message):
-           text = f"↞ الحلو : {message.from_user.mention} \n↞ يبيك للمكالمه :"
+           text = f"⟡ الحلو : {message.from_user.mention} \n⟡ يبيك للمكالمه :"
            x = 0
            for user in message.video_chat_members_invited.users:
              try:
