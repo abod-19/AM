@@ -7,7 +7,7 @@ from pyrogram import Client, filters, emoji
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from ZeMusic import app
 
-@app.on_message(filters.text & filters.regex(r"^\السورس$"))
+@app.on_message(filters.regex(r"^(السورس|سورس)$"))
 async def huhh(client: Client, message: Message):
     dev = await client.get_users(OWNER_ID)
     name = dev.first_name
