@@ -15,7 +15,7 @@ from ZeMusic.utils.database import (
 
 @app.on_message(filters.command(["activevc", "activevoice", "الاتصالات","المكالمات"]) & SUDOERS)
 async def activevc(_, message: Message):
-    mystic = await message.reply_text("» جاري البحث عن اتصالات ...")
+    mystic = await message.reply_text("⟡ جاري البحث عن مكالمات ...")
     served_chats = await get_active_chats()
     text = ""
     j = 0
@@ -37,17 +37,17 @@ async def activevc(_, message: Message):
         except:
             continue
     if not text:
-        await mystic.edit_text(f"» لاتوجد اتصالات الان.\n  {app.mention}.")
+        await mystic.edit_text(f"⟡ لاتوجد مكالمات الان.\n  {app.mention}.")
     else:
         await mystic.edit_text(
-            f"<b>» الأتصالات النشطة حاليا :</b>\n\n{text}",
+            f"<b>⟡ المكالمات النشطة حاليا :</b>\n\n{text}",
             disable_web_page_preview=True,
         )
 
 
 @app.on_message(filters.command(["activev", "activevideo", "الفيديوهات"]) & SUDOERS)
 async def activevi_(_, message: Message):
-    mystic = await message.reply_text("» جاري البحث عن فيديوهات متوفرة ...")
+    mystic = await message.reply_text("⟡ جاري البحث عن فيديوهات متوفرة ...")
     served_chats = await get_active_video_chats()
     text = ""
     j = 0
@@ -69,9 +69,9 @@ async def activevi_(_, message: Message):
         except:
             continue
     if not text:
-        await mystic.edit_text(f"» لاتوجد فيديوهات الان.\n  {app.mention}.")
+        await mystic.edit_text(f"⟡ لاتوجد فيديوهات الان.\n  {app.mention}.")
     else:
         await mystic.edit_text(
-            f"<b>» الفيديوهات النشطة حاليا :</b>\n\n{text}",
+            f"<b>⟡ الفيديوهات النشطة حاليا :</b>\n\n{text}",
             disable_web_page_preview=True,
         )
