@@ -13,11 +13,8 @@ from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from ZeMusic import app
 from random import  choice, randint
 
-#          
-                
-@app.on_message(
-  command(["المبرمج","مبرمج السورس","مبرمج","مطور السورس"])
-)
+
+@app.on_message(filters.regex(r"^(المبرمج|مبرمج السورس|مبرمج|مطور السورس)$"))
 async def huhh(client: Client, message: Message):
     dev_id = 5145609515
     dev = await client.get_users(dev_id)
