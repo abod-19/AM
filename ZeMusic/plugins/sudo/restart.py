@@ -114,16 +114,16 @@ async def update_(client, message, _):
 async def restart_(_, message):
     response = await message.reply_text("جاري اعادة تشغيل...")
     ac_chats = await get_active_chats()
-    for x in ac_chats:
-        try:
-            await app.send_message(
-                chat_id=int(x),
-                text=f"<b>⇐ جاري اعادة تشغيل:</b> {app.mention} ...\n\n<b>⇐ سيتم اعادة البوت للعمل بعد مرور 5 دقائق.</b>",
-            )
-            await remove_active_chat(x)
-            await remove_active_video_chat(x)
-        except:
-            pass
+    #for x in ac_chats:
+        #try:
+            #await app.send_message(
+                #chat_id=int(x),
+                #text=f"<b>⇐ جاري اعادة تشغيل:</b> {app.mention} ...\n\n<b>⇐ سيتم اعادة البوت للعمل بعد مرور 5 دقائق.</b>",
+            #)
+            #await remove_active_chat(x)
+            #await remove_active_video_chat(x)
+        #except:
+            #pass
 
     try:
         shutil.rmtree("downloads")
