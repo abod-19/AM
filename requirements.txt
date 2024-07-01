@@ -88,4 +88,3 @@ wget==3.2
 youtube_dl
 img2html
 googletrans-py
-pytgcalls==2.0.0
