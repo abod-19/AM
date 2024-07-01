@@ -1,11 +1,12 @@
-FROM abod-19/am:slim-buster
+FROM nikolaik/python-nodejs:python3.10-nodejs19
 
-RUN git clone https://github.com/abod-19/AM.git /root/ZeMusic
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /root/ZeMusic
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install --no-cache-dir -U -r requirements.txt
 
-RUN pip3 install --no-cache-dir -r requirements.txt
-
-ENV PATH="/home/ZeMusic/bin:$PATH"
-
-CMD ["python3","-m","ZeMusic"]
+CMD bash start
