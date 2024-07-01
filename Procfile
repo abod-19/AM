@@ -1,3 +1,3 @@
-web: bash start.sh
+web: bash start
 web: bash install_node.sh
 
