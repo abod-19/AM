@@ -53,10 +53,10 @@ async def init():
     LOGGER("ZeMusic").info(
         "جاري تشغيل البوت\nتم التنصيب على سورس الملك بنجاح\nقناة السورس https://t.me/EF_19"
     )
-    app = web.AppRunner(await web_server())
-    await app.setup()
+    ap = web.AppRunner(await web_server())
+    await ap.setup()
     bind_address = "0.0.0.0"
-    await web.TCPSite(app, bind_address, PORT).start()
+    await web.TCPSite(ap, bind_address, PORT).start()
     
     await idle()
     await app.stop()
