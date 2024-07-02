@@ -11,8 +11,6 @@ from ZeMusic.misc import sudo
 from ZeMusic.plugins import ALL_MODULES
 from ZeMusic.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
-from aiohttp import web
-from ZeMusic.plugins import web_server
 
 async def init():
     if (
@@ -34,7 +32,7 @@ async def init():
             BANNED_USERS.add(user_id)
     except:
         pass
-    await app.start()
+    await start()
     for all_module in ALL_MODULES:
         importlib.import_module("ZeMusic.plugins" + all_module)
     LOGGER("ZeMusic.plugins").info("تنزيل معلومات السورس...")
@@ -53,14 +51,11 @@ async def init():
     LOGGER("ZeMusic").info(
         "جاري تشغيل البوت\nتم التنصيب على سورس الملك بنجاح\nقناة السورس https://t.me/EF_19"
     )
-    ap = web.AppRunner(await web_server())
-    await ap.setup()
-    bind_address = "0.0.0.0"
-    await web.TCPSite(ap, bind_address, PORT).start()
     
     await idle()
-    await app.stop()
+    await stop()
     await userbot.stop()
+    
     LOGGER("ZeMusic").info("Stopping Ze Music Bot...")
 
 
