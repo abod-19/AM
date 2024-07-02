@@ -12,6 +12,7 @@ from ZeMusic.plugins import ALL_MODULES
 from ZeMusic.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 
+
 async def init():
     if (
         not config.STRING1
@@ -32,7 +33,7 @@ async def init():
             BANNED_USERS.add(user_id)
     except:
         pass
-    await start()
+    await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("ZeMusic.plugins" + all_module)
     LOGGER("ZeMusic.plugins").info("تنزيل معلومات السورس...")
@@ -51,11 +52,10 @@ async def init():
     LOGGER("ZeMusic").info(
         "جاري تشغيل البوت\nتم التنصيب على سورس الملك بنجاح\nقناة السورس https://t.me/EF_19"
     )
-    
     await idle()
-    await stop()
+    await app.stop()
     await userbot.stop()
-    
+    await azkar()
     LOGGER("ZeMusic").info("Stopping Ze Music Bot...")
 
 
