@@ -11,7 +11,8 @@ from ZeMusic.misc import sudo
 from ZeMusic.plugins import ALL_MODULES
 from ZeMusic.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
-
+from aiohttp import web
+from AnonXMusic.plugins import web_server
 
 async def init():
     if (
@@ -52,12 +53,16 @@ async def init():
     LOGGER("ZeMusic").info(
         "جاري تشغيل البوت\nتم التنصيب على سورس الملك بنجاح\nقناة السورس https://t.me/EF_19"
     )
+    app = web.AppRunner(await web_server())
+    await app.setup()
+    bind_address = "0.0.0.0"
+    await web.TCPSite(app, bind_address, PORT).start()
+    
     await idle()
     await app.stop()
     await userbot.stop()
     await azkar()
     LOGGER("ZeMusic").info("Stopping Ze Music Bot...")
-
 
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(init())
