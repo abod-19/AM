@@ -12,7 +12,7 @@ from ZeMusic.plugins import ALL_MODULES
 from ZeMusic.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 from aiohttp import web
-from AnonXMusic.plugins import web_server
+from ZeMusic.plugins import web_server
 
 async def init():
     if (
