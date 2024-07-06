@@ -6,14 +6,6 @@
   "repository": "https://github.com/TZThon/ZScale",
   "logo": "https://graph.org/file/2f199ef466e7950dd5e79.jpg",
   "stack": "container",
-  "buildpacks": [
-    {
-      "url": "https://github.com/Scalingo/python-buildpack.git"
-    },
-    {
-      "url": "https://github.com/Scalingo/ffmpeg-buildpack.git"
-    }
-  ],
   "env": {
     "API_ID": {
       "description": "اتركه كما هو.",
@@ -69,5 +61,16 @@
       "required": true,
       "value": "-100"
     }
-  }
+  },
+  "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
 }
