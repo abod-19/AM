@@ -1,78 +1,41 @@
 {
-    "name": "『 𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 』",
-    "description": "〔 سـورس الملك 𝚂𝙾𝚄𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 𖤍 \n افضـل سـورس لتشغيل الصوتيات في المكالمه  › تحديثـات متواصله › 〔 حصريـاً 〕\n - مطـور السـورس : 𝙰𝙱𝙳𝚄𝙻𝙻𝙰𝙷",
+    "name": "𝗭𝗧𝗵𝗼𝗻",
+    "description": "• تنصيب سـورس زدثــون مجاناً علـى منصـة سكـالينجـو • افضـل سـورسـات يـوزربـوت العربيـة",
     "addons": ["scalingo-postgresql"],
     "keywords": ["zelzal", "ai","telegram"],
-    "repository": "https://github.com/abod-19/AM",
-    "logo": "https://graph.org/file/2f199ef466e7950dd5e79.jpg",
-    "stack": "container"
+    "repository": "https://github.com/TZThon/ZScale",
+    "logo": "https://graph.org/file/dc08630c4dc62f59d263b.jpg",
+    "stack": "container",
     "env": {
-      "API_ID": {
-        "description": "اتركه كما هو.",
-        "value": "20036317",
-        "required": true
-      },
-      "API_HASH": {
-        "description": "اتركه كما هو.",
-        "value": "986cb4ba434870a62fe96da3b5f6d411",
-        "required": true
-      },
-      "BOT_NAME": {
-        "description": "اسم البوت بالعربي.",
-        "value": "",
-        "required": true
-      },
-      "BOT_TOKEN": {
-        "description": "ضع هنا تكون البوت الذي صنعته من @BotFather.",
-        "value": "",
-        "required": true
-      },
-      "START_IMG_URL": {
-        "description": "رابط صوره start او اتركه كما هو.",
-        "value": "https://te.legra.ph/file/e8bdc13568a49de93b071.jpg",
-        "required": true
-      },
-      "MONGO_DB_URI": {
-        "description": "لا تغيره. او قم بانشاء قاعده البيانات. الشرح https://t.me/EF_19/2.",
-        "value": "mongodb+srv://abood:king@cluster0.rbp1cqz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-        "required": true
-      },
-      "OWNER_ID": {
-        "description": "ايدي المستخدم الذي ترغب في إضافته كـ مطور البوت",
-        "value": "",
-        "required": true
-      },
-      "STRING_SESSION": {
-        "description": "ضع هنا كود بايروجرام الحساب المساعد",
-        "value": "",
-        "required": true
-      },
-      "HEROKU_API_KEY": {
-        "description": 
-       "هنا ضع الايبي كي الخاص بحساب هيروكو من هذا الرابط https://dashboard.heroku.com/account",
-        "value": "",
-        "required": false
-      },
-      "HEROKU_APP_NAME": {
-        "description": "اسم التطبيق أول مربع كتبته خلي هنا نفسه وحروف صغيرة.",
-        "value": "",
-        "required": false
-      },
-      "CHANNEL_NAME": {
-        "description": "اسم قناتك.",
-        "value": "𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶",
-        "required": true
-      },
-      "CHANNEL_LINK": {
-        "description": "يوزر قناتك بدون @.",
-        "value": "EF_19",
-        "required": true
-      },
-      "LOGGER_ID": {
-        "description": "ادخل ايدي مجموعة السجل بجانب الرقم -100 فـي المربع〔 سوي مجموعة جديدة وروح لاعدادات المجموعة وخلي السجل ظاهر .. بعدها ارفع البوت والحساب المساعد إشـراف وافتـح المكالمه بعدها جيب ايدي المجموعة لهنا 〕.",
-        "value": "-100",
-        "required": true
-      }
-        
+        "STRING_SESSION": {
+            "description": "كـــود جلســة تيــرمكــس - الكـود الكبيـر مـن حـافظـة حسـابـك او مـن بــوت〔 T66bot@ 〕..",
+            "required": true
+        },
+        "TG_BOT_TOKEN": {
+            "description": "تـــوكـــن البـــوت المســاعـد الخــاص بـك - مـن بـوت فـاذر〔 Botfather@ 〕..",
+            "required": true,
+            "value":""
+        },
+        "APP_ID": {
+            "description": "كـود ايبي ايـدي〔 App id 〕اتركـه كمـا هــو",
+            "required": true,
+            "value":"27455984"
+        },
+        "API_HASH": {
+            "description": "كـود ايبي هـاش〔 Api Hash 〕اتركـه كمـا هــو",
+            "required": true,
+            "value":"62d5f68ce2e9189636967120220f5755"
+        },
+        "TZ": {
+            "description": "المنطقـــه الزمنيـــه لا تغيــرهـــا",
+            "required": true,
+            "value": "Asia/Baghdad"
+        },
+        "ENV": {
+            "description": "لا تغيــرهـــا",
+            "required": true,
+            "value": "ANYTHING"
+        }
+
     }
   }
