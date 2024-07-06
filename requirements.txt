@@ -27,5 +27,4 @@ telegraph
 pytz
 wget
 numpy
-nodejs
-npm
+requests
