@@ -1,1 +1,1 @@
-worker: bash ZeMusic
+worker: python3 -m ZeMusic
