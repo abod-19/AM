@@ -1,1 +1,2 @@
-worker: python3 -m ZeMusic
+web: python -m http.server $PORT
+worker: bash start
