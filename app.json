@@ -41,12 +41,12 @@
       },
       "MONGO_DB_URI": {
         "description": "لا تغيره. او قم بانشاء قاعده البيانات. الشرح https://t.me/EF_19/2.",
-        "value": "mongodb+srv://abood:king@cluster0.rbp1cqz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        "value": "mongodb+srv://Music:Music@cluster0.yjgit72.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
         "required": true
       },
       "OWNER_ID": {
         "description": "ايدي المستخدم الذي ترغب في إضافته كـ مطور البوت",
-        "value": "",
+        "value": "5145609515",
         "required": true
       },
       "STRING_SESSION": {
@@ -67,12 +67,12 @@
       },
       "CHANNEL_NAME": {
         "description": "اسم قناتك.",
-        "value": "𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶",
+        "value": "اقتباسات",
         "required": true
       },
       "CHANNEL_LINK": {
         "description": "يوزر قناتك بدون @.",
-        "value": "EF_19",
+        "value": "WG_19",
         "required": true
       },
       "LOGGER_ID": {
