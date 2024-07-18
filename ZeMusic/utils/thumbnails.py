@@ -17,6 +17,8 @@ D = "IC"
 E = "_"
 V = "19"
 DEV = A+B+D+E+V
+YOUTUBE_IMG = "https://telegra.ph/file/f995c36145125aa44bd37.jpg"
+
 def make_col():
     return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
@@ -125,4 +127,4 @@ async def get_thumb(videoid):
         return file
     except Exception as e:
         print(e)
-        return YOUTUBE_IMG_URL
+        return YOUTUBE_IMG
