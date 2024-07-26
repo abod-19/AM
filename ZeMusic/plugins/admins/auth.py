@@ -134,13 +134,11 @@ async def authusers(client, message: Message, _):
         for umm in _wtf:
             _umm = await get_authuser(message.chat.id, umm)
             user_id = _umm["auth_user_id"]
-            admin_id = _umm["admin_id"]
-            admin_name = _umm["admin_name"]
             try:
-                user = (await app.get_users(user_id)).first_name
+                user = await app.get_users(user_id)
+                user = user.mention
                 j += 1
             except:
                 continue
             text += f"{j} - {user}\n"
-            text += f"   {_['auth_8']}\n {admin_name}\n\n"
         await mystic.edit_text(text, reply_markup=close_markup(_))
