@@ -26,6 +26,3 @@ youtube-search-python
 telegraph
 pytz
 numpy
-git+https://github.com/heroku/heroku-buildpack-python@main
-git+https://github.com/heroku/buildpacks-nodejs@main
-git+https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest@master
