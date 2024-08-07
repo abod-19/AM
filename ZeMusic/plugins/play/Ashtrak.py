@@ -1,4 +1,4 @@
-from pyrogram import Client, filters
+"""from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardMarkup as Markup, InlineKeyboardButton as Button
 from pyrogram.enums import ChatType
@@ -31,3 +31,4 @@ async def command_handler(_: Client, message: Message):
             reply_markup=markup
         )
         
+"""
