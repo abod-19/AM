@@ -11,7 +11,7 @@ from youtubesearchpython.__future__ import VideosSearch
 from ZeMusic.utils.database import is_on_off
 from ZeMusic.utils.formatters import time_to_seconds
 
-
+# دالة لتنفيذ الأوامر عبر shell والحصول على المخرجات أو الأخطاء
 async def shell_cmd(cmd):
     proc = await asyncio.create_subprocess_shell(
         cmd,
@@ -26,7 +26,6 @@ async def shell_cmd(cmd):
             return errorz.decode("utf-8")
     return out.decode("utf-8")
 
-
 class YouTubeAPI:
     def __init__(self):
         self.base = "https://www.youtube.com/watch?v="
@@ -35,6 +34,7 @@ class YouTubeAPI:
         self.listbase = "https://youtube.com/playlist?list="
         self.reg = re.compile(r"\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])")
 
+    # دالة للتحقق من وجود الرابط إذا كان رابط فيديو يوتيوب صحيح
     async def exists(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
             link = self.base + link
@@ -43,6 +43,7 @@ class YouTubeAPI:
         else:
             return False
 
+    # دالة للحصول على الرابط من الرسالة
     async def url(self, message_1: Message) -> Union[str, None]:
         messages = [message_1]
         if message_1.reply_to_message:
@@ -67,6 +68,7 @@ class YouTubeAPI:
             return None
         return text[offset : offset + length]
 
+    # دالة للحصول على تفاصيل الفيديو من الرابط
     async def details(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
             link = self.base + link
@@ -84,6 +86,7 @@ class YouTubeAPI:
                 duration_sec = int(time_to_seconds(duration_min))
         return title, duration_min, duration_sec, thumbnail, vidid
 
+    # دالة للحصول على عنوان الفيديو
     async def title(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
             link = self.base + link
@@ -94,6 +97,7 @@ class YouTubeAPI:
             title = result["title"]
         return title
 
+    # دالة للحصول على مدة الفيديو
     async def duration(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
             link = self.base + link
@@ -104,6 +108,7 @@ class YouTubeAPI:
             duration = result["duration"]
         return duration
 
+    # دالة للحصول على الصورة المصغرة للفيديو
     async def thumbnail(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
             link = self.base + link
@@ -114,6 +119,7 @@ class YouTubeAPI:
             thumbnail = result["thumbnails"][0]["url"].split("?")[0]
         return thumbnail
 
+    # دالة للحصول على رابط الفيديو
     async def video(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
             link = self.base + link
@@ -134,6 +140,7 @@ class YouTubeAPI:
         else:
             return 0, stderr.decode()
 
+    # دالة للحصول على قائمة تشغيل الفيديوهات
     async def playlist(self, link, limit, user_id, videoid: Union[bool, str] = None):
         if videoid:
             link = self.listbase + link
@@ -151,6 +158,7 @@ class YouTubeAPI:
             result = []
         return result
 
+    # دالة للحصول على تفاصيل الفيديو (العنوان، المدة، إلخ)
     async def track(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
             link = self.base + link
@@ -172,11 +180,14 @@ class YouTubeAPI:
         }
         return track_details, vidid
 
+    # دالة للحصول على صيغ الفيديو المتاحة
     async def formats(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
+        
+        # تضمين ملف الارتباط في إعدادات yt_dlp
         ytdl_opts = {'cookies': 'cookies.txt', "quiet": True}
         ydl = yt_dlp.YoutubeDL(ytdl_opts)
         with ydl:
@@ -208,6 +219,7 @@ class YouTubeAPI:
                     )
         return formats_available, link
 
+    # دالة للحصول على قائمة الفيديوهات بناءً على الرابط
     async def slider(
         self,
         link: str,
@@ -226,6 +238,7 @@ class YouTubeAPI:
         thumbnail = result[query_type]["thumbnails"][0]["url"].split("?")[0]
         return title, duration_min, thumbnail, vidid
 
+    # دالة لتحميل الفيديو أو الصوت بناءً على الرابط
     async def download(
         self,
         link: str,
@@ -249,6 +262,7 @@ class YouTubeAPI:
                 "nocheckcertificate": True,
                 "quiet": True,
                 "no_warnings": True,
+                'cookies': 'cookies.txt',  # تضمين ملف الارتباط
             }
             x = yt_dlp.YoutubeDL(ydl_optssx)
             info = x.extract_info(link, False)
@@ -266,6 +280,7 @@ class YouTubeAPI:
                 "nocheckcertificate": True,
                 "quiet": True,
                 "no_warnings": True,
+                'cookies': 'cookies.txt',  # تضمين ملف الارتباط
             }
             x = yt_dlp.YoutubeDL(ydl_optssx)
             info = x.extract_info(link, False)
@@ -287,6 +302,7 @@ class YouTubeAPI:
                 "no_warnings": True,
                 "prefer_ffmpeg": True,
                 "merge_output_format": "mp4",
+                'cookies': 'cookies.txt',  # تضمين ملف الارتباط
             }
             x = yt_dlp.YoutubeDL(ydl_optssx)
             x.download([link])
@@ -308,6 +324,7 @@ class YouTubeAPI:
                         "preferredquality": "192",
                     }
                 ],
+                'cookies': 'cookies.txt',  # تضمين ملف الارتباط
             }
             x = yt_dlp.YoutubeDL(ydl_optssx)
             x.download([link])
