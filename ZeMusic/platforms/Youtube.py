@@ -11,7 +11,6 @@ from youtubesearchpython.__future__ import VideosSearch
 from ZeMusic.utils.database import is_on_off
 from ZeMusic.utils.formatters import time_to_seconds
 
-API_KEY = 'AIzaSyAgS45mT79GIoy6EVm6mP3U0oW5hNz4hTk'  # استبدل 'YOUR_API_KEY' بمفتاح API الخاص بك
 
 async def shell_cmd(cmd):
     proc = await asyncio.create_subprocess_shell(
@@ -26,6 +25,7 @@ async def shell_cmd(cmd):
         else:
             return errorz.decode("utf-8")
     return out.decode("utf-8")
+
 
 class YouTubeAPI:
     def __init__(self):
@@ -72,7 +72,7 @@ class YouTubeAPI:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
-        results = VideosSearch(link, limit=1, api_key=API_KEY)
+        results = VideosSearch(link, limit=1)
         for result in (await results.next())["result"]:
             title = result["title"]
             duration_min = result["duration"]
@@ -89,7 +89,7 @@ class YouTubeAPI:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
-        results = VideosSearch(link, limit=1, api_key=API_KEY)
+        results = VideosSearch(link, limit=1)
         for result in (await results.next())["result"]:
             title = result["title"]
         return title
@@ -99,7 +99,7 @@ class YouTubeAPI:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
-        results = VideosSearch(link, limit=1, api_key=API_KEY)
+        results = VideosSearch(link, limit=1)
         for result in (await results.next())["result"]:
             duration = result["duration"]
         return duration
@@ -109,7 +109,7 @@ class YouTubeAPI:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
-        results = VideosSearch(link, limit=1, api_key=API_KEY)
+        results = VideosSearch(link, limit=1)
         for result in (await results.next())["result"]:
             thumbnail = result["thumbnails"][0]["url"].split("?")[0]
         return thumbnail
@@ -156,7 +156,7 @@ class YouTubeAPI:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
-        results = VideosSearch(link, limit=1, api_key=API_KEY)
+        results = VideosSearch(link, limit=1)
         for result in (await results.next())["result"]:
             title = result["title"]
             duration_min = result["duration"]
@@ -218,7 +218,7 @@ class YouTubeAPI:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
-        a = VideosSearch(link, limit=10, api_key=API_KEY)
+        a = VideosSearch(link, limit=10)
         result = (await a.next()).get("result")
         title = result[query_type]["title"]
         duration_min = result[query_type]["duration"]
